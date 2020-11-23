@@ -17,10 +17,11 @@ jobs:
               with:
                   node-version: 12
                   registry-url: https://registry.npmjs.org
-            - name: 🚀 publish
+              env:
+                  ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
+              - name: 🚀 publish
               run: npm publish --access public
               working-directory: my-package
               env:
                   NODE_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
-                  ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
                   
