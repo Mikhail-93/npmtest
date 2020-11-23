@@ -7,7 +7,7 @@ on:
 
 jobs:
     release:
-        name: 🚀 release
+        name: publish
         runs-on: ubuntu-latest
         steps:
             - name: 📚 checkout
@@ -17,8 +17,6 @@ jobs:
               with:
                   node-version: 12
                   registry-url: https://registry.npmjs.org
-              env:
-                  ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
               - name: 🚀 publish
               run: npm publish --access public
               working-directory: my-package
